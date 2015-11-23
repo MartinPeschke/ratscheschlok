@@ -1,0 +1,22 @@
+{
+  "name": "ratscheschlok",
+  "version": "0.0.1",
+  "description": "Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MartinPeschke/ratscheschlok.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MartinPeschke/ratscheschlok/issues"
+  },
+  "homepage": "https://github.com/MartinPeschke/ratscheschlok",
+  "dependencies": {
+    "bower": "^1.6.5"
+  }
+}

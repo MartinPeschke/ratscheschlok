@@ -1,0 +1,129 @@
+@import '/less/bootstrap/bootstrap';
+
+
+@fireRed: #F70000;
+@header-xs-height: 64px;
+@header-sm-height: 144px;
+@header-lg-height: 192px;
+@header-xlg-height: 248px;
+
+section {
+  padding-top: @navbar-height;
+}
+
+section.first {
+  padding-top: @header-xs-height + @navbar-height;
+}
+@media(min-width: @grid-float-breakpoint) {
+  section.first {
+    padding-top: @header-sm-height + @navbar-height;
+  }
+}
+@media(min-width: @screen-lg) {
+  section.first {
+    padding-top: @header-lg-height + @navbar-height;
+  }
+}
+@media(min-width: @screen-xlg) {
+  section.first {
+    padding-top: @header-xlg-height + @navbar-height;
+  }
+}
+
+header {
+  position: fixed;
+  width:100%;
+  top:0;
+  left:0;
+  z-index: 2;
+
+  .super-title {
+    background: @fireRed;
+    margin:0;
+    padding: 0;
+    color: white;
+    text-align: center;
+
+    font-size: @header-xs-height / 2;
+    line-height: @header-xs-height;
+    transition: .1s all ease-in-out;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+  }
+
+  @media(min-width: @grid-float-breakpoint) {
+    .super-title {
+      font-size: @header-sm-height / 2;
+      line-height: @header-sm-height;
+    }
+  }
+  @media(min-width: @screen-lg) {
+    .super-title {
+      font-size: @header-lg-height / 2;
+      line-height: @header-lg-height;
+    }
+  }
+  @media(min-width: @screen-xlg) {
+    .super-title {
+      font-size: @header-xlg-height / 2;
+      line-height: @header-xlg-height;
+    }
+  }
+
+  .navbar-brand.replacement-title {
+    display: None;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &.affix {
+    > .super-title {
+      display: none;
+    }
+    .replacement-title {
+      display: block;
+      color: white;
+    }
+    .collapse.navbar-collapse {
+      float:right;
+    }
+  }
+
+
+
+  .navbar-collapse {
+    text-align: center;
+  }
+  .navbar {
+    margin-bottom: 0;
+  }
+
+  .nav.navbar-nav {
+    &.text-center {
+      display: inline-block;
+      float: none;
+      vertical-align: top;
+    }
+  }
+
+  &.affix {
+
+    &, & > .navbar-default, & > .navbar-collapse {
+      background-color: @fireRed;
+      .nav.navbar-nav {
+        background-color: @fireRed;
+        > li > a {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+
+.section-wrapper {
+  > section {
+    min-height: 100vh;
+  }
+}
