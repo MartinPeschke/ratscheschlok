@@ -1,12 +1,16 @@
-/* eslint-env node */
 var gulp = require('gulp');
-var rename = require('gulp-rename');
+var gp_concat = require('gulp-concat');
+var gp_rename = require('gulp-rename');
+var gp_uglify = require('gulp-uglify');
 var timestamp = require('./timestamp');
-var systemjs = require('./gulp-systemjs');
-var conf = require('../../src/conf.json');
 
-gulp.task('build:js', function() {
-  return systemjs(conf, 'src/app/app.js')
-    .pipe(rename('out.' + timestamp + '.js'))
-    .pipe(gulp.dest('./dist'));
+gulp.task('build:js', function(){
+  return gulp.src([
+    './bower_components/bootstrap/dist/js/bootstrap.js',
+    './src/scripts/*.js'
+  ])
+    .pipe(gp_concat('concat.js'))
+    .pipe(gp_uglify())
+    .pipe(gp_rename('out.' + timestamp + '.js'))
+    .pipe(gulp.dest('dist'));
 });
