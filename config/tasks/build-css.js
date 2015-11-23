@@ -7,7 +7,7 @@ var timestamp = require('./timestamp');
 
 
 gulp.task('build:css', function() {
-  return gulp.src('./src/app/styles.less')
+  return gulp.src('./src/less/styles.less')
     .pipe(less({ paths: [ path.resolve(__dirname, '..') ]}))
     .pipe(rename('out.' + timestamp + '.css'))
     .pipe(gulp.dest('./dist'));
