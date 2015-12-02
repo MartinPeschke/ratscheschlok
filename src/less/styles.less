@@ -49,24 +49,43 @@ header {
     transition: .1s all ease-in-out;
     -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;
+    > .super-sub-title {
+      font-size: 16px;
+      line-height: 1em;
+      margin-bottom: -@header-xs-height / 4;
+      padding-top: @header-xs-height / 4;
+    }
   }
 
   @media(min-width: @grid-float-breakpoint) {
     .super-title {
       font-size: @header-sm-height / 2;
       line-height: @header-sm-height;
+      > .super-sub-title {
+        margin-bottom: -@header-sm-height / 4;
+        padding-top: @header-sm-height / 4;
+      }
     }
   }
   @media(min-width: @screen-lg) {
     .super-title {
       font-size: @header-lg-height / 2;
       line-height: @header-lg-height;
+      > .super-sub-title {
+        margin-bottom: -@header-lg-height / 4;
+        padding-top: @header-lg-height / 4;
+      }
     }
   }
   @media(min-width: @screen-xlg) {
     .super-title {
       font-size: @header-xlg-height / 2;
       line-height: @header-xlg-height;
+      > .super-sub-title {
+        font-size: 32px;
+        margin-bottom: -@header-xlg-height / 4;
+        padding-top: @header-xlg-height / 4;
+      }
     }
   }
 
