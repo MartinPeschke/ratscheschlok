@@ -2,10 +2,10 @@
 
 
 @fireRed: #F70000;
-@header-xs-height: 64px;
-@header-sm-height: 144px;
-@header-lg-height: 192px;
-@header-xlg-height: 248px;
+@header-xs-height: 104px;
+@header-sm-height: 160px;
+@header-lg-height: 216px;
+@header-xlg-height: 290px;
 
 section {
   padding-top: @navbar-height;
@@ -44,18 +44,29 @@ header {
     color: white;
     text-align: center;
 
-    font-size: @header-xs-height / 2;
+    font-size: 40px;
     line-height: @header-xs-height;
     height: @header-xs-height;
     transition: .1s all ease-in-out;
     -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;
-    > .super-sub-title {
+
+    > a:hover, > a:active, > a:focus, > a:visited {
+      text-decoration: none;
+      color:white;
+    }
+    .super-super-title {
       font-size: 16px;
       line-height: 1em;
-      margin-bottom: -@header-xs-height / 4;
-      padding-top: @header-xs-height / 5;
+      margin-bottom: -30px;
+      padding-top: 18px;
     }
+    .super-sub-title {
+      font-size: 16px;
+      line-height: 1em;
+      margin-top: -30px;
+    }
+
   }
 
   @media(min-width: @grid-float-breakpoint) {
@@ -63,9 +74,14 @@ header {
       font-size: @header-sm-height / 2;
       line-height: @header-sm-height;
       height: @header-sm-height;
-      > .super-sub-title {
+      .super-super-title {
         margin-bottom: -@header-sm-height / 4;
-        padding-top: @header-sm-height / 4;
+        padding-top: 28px;
+        font-size:18px;
+      }
+      .super-sub-title {
+        font-size:18px;
+        margin-top: -@header-sm-height / 4;
       }
     }
   }
@@ -74,21 +90,32 @@ header {
       font-size: @header-lg-height / 2;
       line-height: @header-lg-height;
       height: @header-lg-height;
-      > .super-sub-title {
+      .super-super-title {
         margin-bottom: -@header-lg-height / 4;
-        padding-top: @header-lg-height / 4;
+        padding-top: 44px;
+        font-size:22px;
+      }
+      .super-sub-title {
+        margin-top: -@header-lg-height / 4;
+        font-size:22px;
       }
     }
   }
   @media(min-width: @screen-xlg) {
     .super-title {
-      font-size: @header-xlg-height / 2;
+      font-size: @header-xlg-height / 2.5;
       line-height: @header-xlg-height;
       height: @header-xlg-height;
-      > .super-sub-title {
-        font-size: 32px;
-        margin-bottom: -@header-xlg-height / 4;
-        padding-top: @header-xlg-height / 4;
+      .super-super-title {
+        font-size: 30px;
+        line-height: 1em;
+        margin-bottom: -72px;
+        padding-top: 46px;
+      }
+      .super-sub-title {
+        font-size: 30px;
+        line-height: 1em;
+        margin-top: -72px;
       }
     }
   }
@@ -99,6 +126,10 @@ header {
     font-weight: bold;
     padding-left: 0;
     padding-right: 0;
+    &:hover, &:active, &:focus, &:visited {
+      text-decoration: none;
+      color:white;
+    }
   }
   &.affix {
     > .super-title {
@@ -107,9 +138,6 @@ header {
     .replacement-title {
       display: block;
       color: white;
-    }
-    .collapse.navbar-collapse {
-      float:right;
     }
   }
 
@@ -139,6 +167,8 @@ header {
           color: #ffffff;
         }
       }
+
+      .icon-bar {background-color: white;}
     }
   }
 }
@@ -147,6 +177,9 @@ header {
 .section-wrapper {
   > section {
     min-height: 100vh;
+  }
+  section+section {
+    border-top: 1px solid #eee;
   }
 }
 
@@ -177,4 +210,7 @@ footer {
     border-top: 1px solid @navbar-default-border;
     line-height: @navbar-height;
   }
+}
+.maps-container {
+  margin: 60px 0 0;
 }
