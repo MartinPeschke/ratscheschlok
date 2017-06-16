@@ -5,7 +5,7 @@ var timestamp = require('./timestamp');
 
 
 gulp.task('build:html', function() {
-  return gulp.src('./src/index.html')
+  return gulp.src('./src/*.html')
     .pipe(htmlreplace({
       css: '/out.' + timestamp + '.css',
       js: '/out.' + timestamp + '.js',
