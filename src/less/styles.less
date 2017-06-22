@@ -1,5 +1,9 @@
 @import './bootstrap/bootstrap';
 
+body {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
 
 @fireRed: #F70000;
 @header-xs-height: 104px;
@@ -185,17 +189,29 @@ header {
 
 .starting-underline {
   height: 0;
-  width: 88px;
+  width: 58px;
   border-top: 3px solid #F70000;
   display: block;
   margin-left: 0;
   margin-top:3px;
-  margin-bottom: 9px;
+  margin-bottom: 19px;
 }
 
+.page-title.mast-head {
+  .img-responsive {
+    padding-right: 10px;
+    max-width:300px;
+    width:100%;
+    margin-bottom: 30px;
+  }
+}
+
+.address-section {
+  margin-top: 30px;
+}
 .page-title {
   margin-bottom: 45px;
-  margin-top: 30px;
+  margin-top: 45px;
 }
 address {
   margin-bottom: 0;
